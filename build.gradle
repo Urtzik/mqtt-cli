@@ -114,8 +114,8 @@ ext {
 
     // Dependency versions
 
-    picoclishell3Version = '4.2.0'
-    picocliVersion = '4.2.0'
+    picoclishell3Version = '4.3.2'
+    picocliVersion = '4.3.2'
     jline3Version = '3.14.0'
     jline3JansiVersion = '3.14.0'
     daggerVersion = '2.21'
@@ -282,9 +282,12 @@ test {
  ***************/
 
 graal {
-    graalVersion '20.0.0'
+    graalVersion '20.1.0'
     outputName "${rootProject.name}"
     mainClass application.mainClassName
+    option '--enable-https'
+    option '--enable-url-protocols=https'
+    option '--enable-all-security-services'
     option '-H:+PrintClassInitialization'
     option '-H:ReflectionConfigurationFiles=tools/reflection.json'
     option "-H:ResourceConfigurationFiles=tools/resources.json"
